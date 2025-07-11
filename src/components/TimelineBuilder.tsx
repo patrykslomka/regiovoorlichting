@@ -23,16 +23,16 @@ const TimelineBuilder = () => {
   const [timelineItems, setTimelineItems] = useState<TimelineItem[]>([
     { 
       id: 1, 
-      title: 'Open Dag UvA', 
-      date: '2024-03-15', 
+      title: 'Open Dag TiU', 
+      date: '2025-11-01', 
       type: 'event', 
       completed: false,
-      description: 'Bezoek de open dag van de Universiteit van Amsterdam'
+      description: 'Bezoek de open dag van de Tilburg Universiteit'
     },
     { 
       id: 2, 
       title: 'Aanmelden voor studies', 
-      date: '2024-05-01', 
+      date: '2025-05-01', 
       type: 'deadline', 
       completed: false,
       description: 'Deadline voor aanmelding bij de meeste studies'
@@ -40,7 +40,7 @@ const TimelineBuilder = () => {
     { 
       id: 3, 
       title: 'Studieadviseur gesprek', 
-      date: '2024-04-01', 
+      date: '2025-04-01', 
       type: 'appointment', 
       completed: false,
       description: 'Gesprek met studieadviseur op school'

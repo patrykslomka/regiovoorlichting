@@ -138,7 +138,7 @@ const RegiovoorlichtingenApp = () => {
                 </div>
                 <div className="flex items-center">
                   <Phone className="w-4 h-4 mr-2" />
-                  <span>088 - 123 4567</span>
+                  <span>06 123 45678</span>
                 </div>
               </div>
             </div>
