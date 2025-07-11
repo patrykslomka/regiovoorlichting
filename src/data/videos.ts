@@ -56,11 +56,11 @@ export const videos = [
   },
   {
     id: 6,
-    title: 'Geneeskunde Toelatingseisen',
+    title: 'Toelatingseisen',
     duration: '22:10',
-    category: 'medicine',
+    category: 'toelating',
     thumbnail: '/api/placeholder/300/200',
-    description: 'Alles over toelating tot de medische studies.',
+    description: 'Alles over toelating.',
     uploadDate: '2024-01-12',
     views: 980,
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'

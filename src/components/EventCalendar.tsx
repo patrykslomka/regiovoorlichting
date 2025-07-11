@@ -13,7 +13,6 @@ const EventCalendar = () => {
     { id: 'all', name: 'Alle Evenementen', color: 'bg-gray-100' },
     { id: 'studiedag', name: 'Studiedagen', color: 'bg-blue-100' },
     { id: 'ouderavond', name: 'Ouderavonden', color: 'bg-green-100' },
-    { id: 'beurs', name: 'Beurzen', color: 'bg-purple-100' },
     { id: 'masterclass', name: 'Masterclasses', color: 'bg-orange-100' },
     { id: 'informatiesessie', name: 'Informatiesessies', color: 'bg-red-100' }
   ];
@@ -33,7 +32,6 @@ const EventCalendar = () => {
     const colors: Record<string, string> = {
       'studiedag': 'text-blue-800',
       'ouderavond': 'text-green-800',
-      'beurs': 'text-purple-800',
       'masterclass': 'text-orange-800',
       'informatiesessie': 'text-red-800'
     };

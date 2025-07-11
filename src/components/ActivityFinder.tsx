@@ -133,7 +133,6 @@ const ActivityFinder = () => {
                 <option value="presentatie">Presentatie</option>
                 <option value="workshop">Workshop</option>
                 <option value="proefcollege">Proefcollege</option>
-                <option value="beurs">Beurs</option>
               </select>
             </div>
 

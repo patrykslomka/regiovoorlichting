@@ -62,7 +62,6 @@ const HomePage = ({ selectedRegion, onRegionSelect, setCurrentPage }: HomePagePr
               <ul className="space-y-2 text-sm">
                 <li><a href="#" className="text-blue-600 hover:underline">Studiekeuze123.nl - Onafhankelijke studiekeuzetest</a></li>
                 <li><a href="#" className="text-blue-600 hover:underline">DUO - Financiële informatie</a></li>
-                <li><a href="#" className="text-blue-600 hover:underline">Studentenkaarten.nl - Vergelijken van studielocaties</a></li>
                 <li><a href="#" className="text-blue-600 hover:underline">Studielink.nl - Inschrijfprocedures</a></li>
               </ul>
             </div>
@@ -82,7 +81,6 @@ const HomePage = ({ selectedRegion, onRegionSelect, setCurrentPage }: HomePagePr
                 <li><a href="#" className="text-blue-600 hover:underline">VO-raad.nl - Landelijke richtlijnen</a></li>
                 <li><a href="#" className="text-blue-600 hover:underline">Noloc.nl - Loopbaanoriëntatie</a></li>
                 <li><a href="#" className="text-blue-600 hover:underline">Schoolentalent.nl - Talentherkenning</a></li>
-                <li><a href="#" className="text-blue-600 hover:underline">Studiekeuze-info.nl - Actuele trends</a></li>
               </ul>
             </div>
           </div>
