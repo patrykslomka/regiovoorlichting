@@ -1,13 +1,26 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, MapPin, Clock, Users, ExternalLink } from 'lucide-react';
-import { events } from '../data/events';
 
 const EventCalendar = () => {
+  const [events, setEvents] = useState<any[]>([]);
   const [view, setView] = useState('list');
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedEvent, setSelectedEvent] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('/api/events');
+        const data = await response.json();
+        setEvents(data);
+      } catch (error) {
+        console.error('Failed to fetch events:', error);
+      }
+    };
+    fetchEvents();
+  }, []);
 
   const eventTypes = [
     { id: 'all', name: 'Alle Evenementen', color: 'bg-gray-100' },
