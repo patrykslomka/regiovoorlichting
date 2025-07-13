@@ -2,10 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { Calendar, MapPin, Users, Filter } from 'lucide-react';
-import { activities } from '../data/activities';
-import { regions } from '../data/regions';
 
 const ActivityFinder = () => {
+  const [activities, setActivities] = useState<any[]>([]);
+  const [regions, setRegions] = useState<any[]>([]);
   const [filters, setFilters] = useState({
     region: '',
     studyField: '',
@@ -14,8 +14,29 @@ const ActivityFinder = () => {
     audience: ''
   });
 
-  const [filteredActivities, setFilteredActivities] = useState(activities);
+  const [filteredActivities, setFilteredActivities] = useState<any[]>([]);
   const [showFilters, setShowFilters] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [activitiesResponse, regionsResponse] = await Promise.all([
+          fetch('/api/activities'),
+          fetch('/api/regions')
+        ]);
+        
+        const activitiesData = await activitiesResponse.json();
+        const regionsData = await regionsResponse.json();
+        
+        setActivities(activitiesData);
+        setFilteredActivities(activitiesData);
+        setRegions(regionsData);
+      } catch (error) {
+        console.error('Failed to fetch data:', error);
+      }
+    };
+    fetchData();
+  }, []);
 
   useEffect(() => {
     let filtered = activities;

@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Studiekeuze Tips",
+    "duration": "12:30",
+    "category": "business",
+    "thumbnail": "/api/placeholder/300/200",
+    "description": "Praktische tips voor ouders om hun kinderen te helpen bij de studiekeuze.",
+    "uploadDate": "2024-01-15",
+    "views": 1250,
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    "id": 2,
+    "title": "Bedrijfskunde Presentatie",
+    "duration": "25:45",
+    "category": "business",
+    "thumbnail": "/api/placeholder/300/200",
+    "description": "Uitgebreide presentatie over de bedrijfskunde opleiding.",
+    "uploadDate": "2024-01-10",
+    "views": 890,
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    "id": 3,
+    "title": "Technische Studies Overzicht",
+    "duration": "18:20",
+    "category": "engineering",
+    "thumbnail": "/api/placeholder/300/200",
+    "description": "Overzicht van alle technische studies in Nederland.",
+    "uploadDate": "2024-01-05",
+    "views": 1100,
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    "id": 4,
+    "title": "Rechtenstudie Uitgelegd",
+    "duration": "15:30",
+    "category": "law",
+    "thumbnail": "/api/placeholder/300/200",
+    "description": "Wat houdt de rechtenstudie in en welke specialisaties zijn er?",
+    "uploadDate": "2024-01-20",
+    "views": 750,
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    "id": 5,
+    "title": "Studiekeuze Stappenplan",
+    "duration": "20:15",
+    "category": "studiekeuze",
+    "thumbnail": "/api/placeholder/300/200",
+    "description": "Stap voor stap uitleg hoe je de juiste studie kiest.",
+    "uploadDate": "2024-01-25",
+    "views": 1500,
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    "id": 6,
+    "title": "Geneeskunde Toelatingseisen",
+    "duration": "22:10",
+    "category": "medicine",
+    "thumbnail": "/api/placeholder/300/200",
+    "description": "Alles over toelating tot de medische studies.",
+    "uploadDate": "2024-01-12",
+    "views": 980,
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  }
+]

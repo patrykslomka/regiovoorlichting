@@ -1,10 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Calendar, Video, Calculator, Users, Search } from 'lucide-react';
 import GoogleMapWithMarkers from './GoogleMapWithMarkers';
 import QuickAccessCard from './ui/QuickAccessCard';
-import { regions } from '../data/regions';
 
 interface HomePageProps {
   selectedRegion: any;
@@ -13,30 +12,73 @@ interface HomePageProps {
 }
 
 const HomePage = ({ selectedRegion, onRegionSelect, setCurrentPage }: HomePageProps) => {
+  const [regions, setRegions] = useState<any[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
+
+  useEffect(() => {
+    const fetchRegions = async () => {
+      try {
+        const response = await fetch('/api/regions');
+        const data = await response.json();
+        setRegions(data);
+      } catch (error) {
+        console.error('Failed to fetch regions:', error);
+      }
+    };
+    fetchRegions();
+  }, []);
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          {/* Floating circles */}
+          <div className="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full animate-pulse"></div>
+          <div className="absolute top-32 right-20 w-16 h-16 bg-white bg-opacity-5 rounded-full animate-bounce" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white bg-opacity-10 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-32 right-1/3 w-8 h-8 bg-white bg-opacity-15 rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
+          
+          {/* Floating academic icons */}
+          <div className="absolute top-16 right-1/4 animate-float">
+            <div className="w-8 h-8 bg-white bg-opacity-20 rounded transform rotate-12">
+              <div className="w-full h-full flex items-center justify-center">
+                <div className="w-4 h-4 border-2 border-white rounded-sm"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="absolute bottom-24 left-1/3 animate-float-delay">
+            <div className="w-6 h-6 bg-white bg-opacity-15 rounded-full transform -rotate-12">
+              <div className="w-full h-full flex items-center justify-center">
+                <div className="w-2 h-2 bg-white rounded-full"></div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Gradient overlay for depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black bg-opacity-5"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
               Jouw gids naar de juiste studiekeuze
             </h2>
-            <p className="text-xl mb-8 max-w-3xl mx-auto">
+            <p className="text-xl mb-8 max-w-3xl mx-auto animate-fade-in-delay">
               Ontdek onafhankelijke informatie, betrouwbare bronnen en regionale voorlichtingssessies. 
               Wij helpen je navigeren door het studiekeuzeproces met relevante content en context.
             </p>
             
             {/* Search Bar */}
-            <div className="max-w-md mx-auto relative">
+            <div className="max-w-md mx-auto relative animate-fade-in-delay-2">
               <input
                 type="text"
                 placeholder="Zoek op postcode of plaatsnaam..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-3 pl-12 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                className="w-full px-4 py-3 pl-12 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-lg"
               />
               <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-400" />
             </div>
@@ -202,6 +244,26 @@ const HomePage = ({ selectedRegion, onRegionSelect, setCurrentPage }: HomePagePr
               buttonText="Maak Planning"
               onClick={() => setCurrentPage('timeline')}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Partner Section */}
+      <section className="py-8 bg-white border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center space-x-8">
+            <div className="text-sm text-gray-600">
+              Partner van:
+            </div>
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/Tilburg-University-logo.png" 
+                alt="Tilburg University Logo" 
+                className="h-8 w-auto opacity-75 hover:opacity-100 transition-opacity"
+              />
+              <div className="text-sm text-gray-700">
+              </div>
+            </div>
           </div>
         </div>
       </section>

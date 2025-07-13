@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { PlayCircle, Download, Clock, Eye, Search } from 'lucide-react';
-import { videos } from '../data/videos';
 
 interface Video {
   id: number;
@@ -22,10 +21,25 @@ interface Category {
 }
 
 const VideoLibrary = () => {
+  const [videos, setVideos] = useState<Video[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [filteredVideos, setFilteredVideos] = useState<Video[]>(videos);
+  const [filteredVideos, setFilteredVideos] = useState<Video[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const response = await fetch('/api/videos');
+        const data = await response.json();
+        setVideos(data);
+        setFilteredVideos(data);
+      } catch (error) {
+        console.error('Failed to fetch videos:', error);
+      }
+    };
+    fetchVideos();
+  }, []);
 
   const categories: Category[] = [
     { id: 'all', name: 'Alle Video\'s', count: videos.length },
